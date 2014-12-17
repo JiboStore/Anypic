@@ -254,10 +254,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                 NSForegroundColorAttributeName: [UIColor whiteColor]
                                 }];
-//
-//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"BackgroundNavigationBar.png"]
-//                                       forBarMetrics:UIBarMetricsDefault];
-//
+
     [[UIButton appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleColor:[UIColor colorWithRed:254.0f/255.0f green:149.0f/255.0f blue:50.0f/255.0f alpha:1.0f]
      forState:UIControlStateNormal];
@@ -388,10 +385,9 @@
     [PFCloud callFunctionInBackground:@"autoFollowUsers" withParameters:nil block:^(id object, NSError *error) {
         if (error) {
             NSLog(@"Error auto following users: %@", error);
-        } else {
-            [MBProgressHUD hideHUDForView:self.navController.presentedViewController.view animated:NO];
-            [self.homeViewController loadObjects];
         }
+        [MBProgressHUD hideHUDForView:self.navController.presentedViewController.view animated:NO];
+        [self.homeViewController loadObjects];
     }];
 }
 
