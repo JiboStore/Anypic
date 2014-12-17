@@ -50,7 +50,9 @@
   
     // Track app open.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
+    
+    [Parse setApplicationId:@"1TSI99EmtongxRxK8adNv8xipqK7HrsofD8H9UF2" clientKey:@"GlyksOuUj8ApMjDtMRqAPDgN3oVy8mmzBBtdEurw"];
+    
     if (application.applicationIconBadgeNumber != 0) {
         application.applicationIconBadgeNumber = 0;
         [[PFInstallation currentInstallation] saveInBackground];
